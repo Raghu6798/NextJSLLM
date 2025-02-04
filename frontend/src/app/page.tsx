@@ -45,7 +45,7 @@ export default function HomePage() {
     if (scrollAreaRef.current) {
       scrollAreaRef.current.scrollTop = scrollAreaRef.current.scrollHeight
     }
-  }, [scrollAreaRef])
+  }, [chatHistory])
 
   return (
     <div className="container mx-auto p-4">
@@ -59,8 +59,8 @@ export default function HomePage() {
               <div key={index} className={`mb-4 ${chat.role === "user" ? "text-right" : "text-left"}`}>
                 <div
                   className={`inline-block p-2 rounded-lg ${
-                    chat.role === "user" ? "bg-blue-500 text-white" : "bg-gray-200 text-black"
-                  }`}
+    chat.role === "user" ? "bg-black text-white" : "bg-gray-200 text-black"
+  }`}
                 >
                   <ReactMarkdown>{chat.content}</ReactMarkdown>
                 </div>
@@ -92,4 +92,3 @@ export default function HomePage() {
     </div>
   )
 }
-
